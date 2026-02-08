@@ -75,5 +75,3 @@ print @backwards, "\n";
 # special arrays
 # @ARGV - the command line arguments to your script
 # @_ - the arguments passed to a subroutine
-
-

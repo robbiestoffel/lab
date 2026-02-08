@@ -1,0 +1,74 @@
+#!/usr/bin/perl
+
+# Variable Scoping
+
+my $var = "value";
+
+$var = "value";
+
+# without my, the variable becomes global (bad practice)
+
+# if
+
+my $coffee = 9;
+my $tea = 5;
+
+if ($coffee > $tea) {
+  print "haha!\n";
+} elsif ($tea == $coffee) {
+  print "sure then\n";
+} else {
+  print "booo\n";
+}
+
+unless ($tea > $coffee) {
+  print "unless...\n";
+}
+# readable version of if(!condition)
+
+# traditional
+$zippy = True;
+
+if ($zippy) {
+  print "Yow!\n";
+}
+
+# -or-, fancy way
+print "Yow!\n" if $zippy;
+# or unless instead of if
+
+$countdown = 5;
+while ($countdown > 0) {
+  print $countdown, "\n";
+  $countdown--
+}
+
+# until is negative version of while
+
+# for is the same in C. except idk C but ok
+my $max = 4;
+for ($i = 0; $i <= $max; $i++) {
+  print "for loopin'\n";
+}
+
+# for is rarely used bc of the amazing `foreach`
+
+my @hermits = ("Tango", "Gem", "Grian", "Mumbo", "Cleo", "Pearl");
+my $count = 0;
+
+foreach (@hermits) {
+  print "I LOVE $hermits[$count]\n";
+  $count++
+}
+
+print $hermits[$_], "\n" foreach 0 .. @hermits;
+
+print " LA LAA... LA LAAAAA\n" while 1; # loops forever :(
+
+# String comparison
+# eq -equality
+# ne -inequality
+# lt -less than
+# gt -greater than
+# le -less or equal
+# ge -greater or equal

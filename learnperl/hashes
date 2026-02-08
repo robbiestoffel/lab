@@ -1,0 +1,51 @@
+#!/usr/bin/perl
+
+# A hash represents a set of key/avue pairs
+# A `%` sigil indicates a single hash
+
+my %fruit_color_boring = ("apple", "red", "banana", "yellow");
+
+# -or-
+
+my %fruit_color = (
+  apple => "red",
+  banana => "yellow",
+  lime => "green",
+);
+
+print $fruit_color{"apple"}, "\n";
+# gives "red"
+
+# note use of $ for single hash element
+
+my @non_red = @fruit_color{"banana", "lime"};
+print $non_red[0], "\n"; # yellow
+print $non_red[1], "\n"; # green
+
+# lists of keys() and values()
+
+my @fruits = keys %fruit_color;
+my @colors = values %fruit_color;
+
+print @fruits, "\n";
+print @colors, "\n";
+
+# $name @name and %name are three different variables
+
+my $variables = {
+  scalar => {
+    description => "single item",
+    sigil => '$',
+  },
+  array => {
+    description => "ordered list of items",
+    sigil => '$',
+  },
+  hash => {
+    description => "single item",
+    sigil => '$',
+  },
+};
+
+print "Scalars being with a $variables->{'scalar'}->{'sigil'}\n";
+
