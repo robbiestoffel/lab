@@ -1,0 +1,79 @@
+#!/usr/bin/perl
+
+# If a potential problem is caught your code will stop running
+# immediately
+use strict;
+use warnings;
+
+# these are potentially automatic after version 5.35
+
+# no need for main function
+
+print "Hello, world\n";
+
+print
+    "whitespace is irrelevant\n"
+    ;
+# except inside strings
+
+print 42;
+print "\n";
+# numbers do not need quotes
+
+# Scalar
+my $name = "Robbie";
+
+print "Hello $name\n"; # works fine
+print 'Hello $name\n'; # literally prints 'Hello $name/n'
+
+print "\n";
+
+my $favorite_number = 7;
+# necessary note: i do not actually have a favorite number
+
+my $animal = "cat";
+my $number = 9;
+
+print $animal;
+print "The animal is $animal\n";
+print "The square of $number is ", $number * $number, "\n";
+
+# $_ is a 'default variable' print; prints the default variable
+
+# Arrays
+
+my @animals = ("camel", "llama", "owl");
+my @numbers = (23, 42, 69);
+my @mixed = ("camel", 42, 1.23);
+
+# each value is actually a scalar
+
+print $animals[0], "\n";
+print $animals[1], "\n";
+
+# Scalars are always written with a '$' and since each avlue in an array
+# is actually a scalar, when calling a single value from an array, you
+# should use  '$'
+
+# `$#<array-name>` always gives you the last value
+print $mixed[$#mixed], "\n"; #prints 1.23
+
+if (@mixed < 5) {
+  print "mixed has less than 5 items\n";
+}
+
+print @animals[0,1], "\n";
+print @animals[0..2], "\n";
+print @animals[1..$#animals], "\n";
+# we go back to using `@` for multiple values
+
+my @sorted = sort @animals;
+my @backwards = reverse @animals;
+print @sorted, "\n";
+print @backwards, "\n";
+
+# special arrays
+# @ARGV - the command line arguments to your script
+# @_ - the arguments passed to a subroutine
+
+
