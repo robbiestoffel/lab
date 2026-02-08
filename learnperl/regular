@@ -1,0 +1,46 @@
+#!/usr/bin/perl
+
+if (/foo/) { print "ello there"; }
+$x = "somewhere in here is foo.";
+if ($x =~ /foo/) {
+  print "Who knew... x contains a foo!\n"
+}
+
+# `//` is a matching operator
+
+# s/foo/bar;
+# $x =~ s/foo/bar/;
+# $x =~ s/foo/bar/g;
+
+
+# Example, breaking up an email address
+
+$email = 'person@ubuntu.com';
+if ($email =~ /([^@]+)@(.+)/) {
+  print "Username is $1\n";
+  print "Hostname is $2\n";
+}
+
+__END__
+.                   a single character
+\s                  a whitespace character (space, tab, newline, ...)
+\S                  non-whitespace character
+\d                  a digit (0-9)
+\D                  a non-digit
+\w                  a word character (a-z, A-Z, 0-9, _)
+\W                  a non-word character
+[aeiou]             matches a single character in the given set
+[^aeiou]            matches a single character outside the given
+                    set
+(foo|bar|baz)       matches any of the alternatives specified
+
+^                   start of string
+$                   end of string
+
+
+*                   zero or more of the previous thing
++                   one or more of the previous thing
+?                   zero or one of the previous thing
+{3}                 matches exactly 3 of the previous thing
+{3,6}               matches between 3 and 6 of the previous thing
+{3,}                matches 3 or more of the previous thing
