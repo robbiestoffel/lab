@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $prompt = "the snack";
+my $answer = "la merienda";
+
+print $prompt, " : ";
+my $input = <STDIN>;
+chomp($input);
+
+if ($input eq $answer) {
+  print "\nGood Job! You are so smart!\n";
+} else {
+  print "\nwelp. sorry. try $answer next time.\n";
+}
